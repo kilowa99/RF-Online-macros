@@ -1,0 +1,93 @@
+{
+	"folders": [
+		{
+			"name": "RF-Online-macros",
+			"path": "../../../../../Downloads/RF-Online-macros"
+		}
+	],
+	"settings": {
+		"launchOption.currentConfig": {}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"request": "launch",
+				"name": "Launch Deno Program",
+				"type": "deno",
+				"program": "${workspaceFolder}/main.ts",
+				"cwd": "${workspaceFolder}",
+				"env": {},
+				"runtimeExecutable": "deno",
+				"args": [],
+				"attachSimplePort": 9229
+			},
+			{
+				"request": "launch",
+				"name": "Launch Program",
+				"type": "node",
+				"program": "${workspaceFolder}/main.ts",
+				"cwd": "${workspaceFolder}",
+				"env": {},
+				"runtimeExecutable": "deno",
+				"runtimeArgs": [
+					"run",
+					"--unstable",
+					"--inspect-brk",
+					"--allow-all"
+				],
+				"attachSimplePort": 9229
+			},
+			{
+				"type": "pwa-msedge",
+				"name": "Launch Microsoft Edge",
+				"request": "launch",
+				"runtimeArgs": [
+					"--remote-debugging-port=9222"
+				],
+				"url": "c:\\Users\\dywan\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.9\\out\\startpage\\index.html",
+				"presentation": {
+					"hidden": true
+				}
+			},
+			{
+				"type": "pwa-msedge",
+				"name": "Launch Microsoft Edge in headless mode",
+				"request": "launch",
+				"runtimeArgs": [
+					"--headless",
+					"--remote-debugging-port=9222"
+				],
+				"url": "c:\\Users\\dywan\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.9\\out\\startpage\\index.html",
+				"presentation": {
+					"hidden": true
+				}
+			},
+			{
+				"type": "vscode-edge-devtools.debug",
+				"name": "Open Edge DevTools",
+				"request": "attach",
+				"url": "c:\\Users\\dywan\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.9\\out\\startpage\\index.html",
+				"presentation": {
+					"hidden": true
+				}
+			}
+		],
+		"compounds": [
+			{
+				"name": "Launch Edge Headless and attach DevTools",
+				"configurations": [
+					"Launch Microsoft Edge in headless mode",
+					"Open Edge DevTools"
+				]
+			},
+			{
+				"name": "Launch Edge and attach DevTools",
+				"configurations": [
+					"Launch Microsoft Edge",
+					"Open Edge DevTools"
+				]
+			}
+		]
+	}
+}
