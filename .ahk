@@ -15,7 +15,7 @@ Gui, Add, Button,gCredits, Credits
 Return
 
 LaunchAutoLoot:
-IfWinExist RF_Online.bin
+IfWinExist RF Online
     WinActivate
 Loop {
     Send {x}
